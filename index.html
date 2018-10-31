@@ -1,1 +1,275 @@
-Hi
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Sniper</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Sniper game ,Shoot to Kill!">
+    <meta name="keywords" content="Sniper, Game, Simple Game, Skull">
+    <meta name="author" content="Milad Kh">
+
+    <link rel="icon" href="images/sniper-icon.png" type="image/gif" sizes="16x16">
+<!-- lag    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body id="body">
+
+    <!-- <form id="regForm" action="/action_page.php"> -->
+<!--    <form>   --> 
+   <form id="regForm">
+        <h1>Settings</h1>
+        <!-- One "tab" for each step in the form: -->
+
+        
+<!-- 1   ////////////////////////////////// -->
+        <div class="tab" id="id00">Login Info:
+            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+            <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+        </div>
+
+
+<!-- 2   ////////////////////////////////// -->
+        <div class="tab" id="id01">Contact Info:
+            <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+            <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+        </div>
+
+
+<!-- 3   ////////////////////////////////// -->
+        <div class="tab" id="setting-background">Background:
+        <br />
+<!--            <h2 id="settings-header">Background</h2>  -->
+            
+            <div id="set-background">
+                    <div class="setting-container">
+                        <div class="setting-container-divider"> <!-- this div reaches up to half the width of the screen. (for design) -->
+                            <span class="in-form-words">Select Color: &nbsp; </span>
+                            <input id="color-picker-input" type="color" name="favcolor" value="#f7f7f7" />
+                            <button id="color-picker-button" type="button" onclick="changeColor(); return false;">&#10004; </button>
+                        </div>
+                    </div>
+
+                    <div id="skulls-wrapper">
+                        <div class="skulls">
+                            <a href="#1"><img onclick="buildWallpaper(1)" src="skulls/skull1.png" alt="s1"></a>
+                            <a href="#2"><img onclick="buildWallpaper(2)" src="skulls/skull2.png" alt="s2"></a>
+                            <a href="#3"><img onclick="buildWallpaper(3)" src="skulls/skull3.png" alt="s3"></a>
+                        </div>
+
+                        <div class="skulls">
+                            <a href="#4"><img onclick="buildWallpaper(4)" src="skulls/skull4.png" alt="s4"></a>
+                            <a href="#5"><img onclick="buildWallpaper(5)" src="skulls/skull5.png" alt="s5"></a>
+                            <a href="#6"><img onclick="buildWallpaper('6')" src="skulls/skull6.png" alt="s6"></a>
+                        </div>
+                    </div>
+
+                <script>
+                    function changeColor() {
+                        let color = document.getElementById("color-picker-input").value;
+                        let body = document.getElementById("body");
+                        body.style.backgroundColor = color;
+                       // return false;
+                    }
+
+                    function buildWallpaper(x) {
+                        let body = document.getElementsByTagName("body")[0];
+
+                        let wallpaperUrl = 'url('  +"'" + 'skulls/skull' + x + '.png' + "'"+ ')';
+
+                        body.style.backgroundImage = wallpaperUrl;
+                    }
+                </script>
+
+            </div>
+        </div>
+
+
+        <div class="tab" id="setting-sound">Sound: 
+        <br />
+<!--;;;;;;;;;;;;;;;;;;;;;;;; sound page  ;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+<!--            <div id="set-sound">  -->
+            <div class="setting-container">
+                <div class="setting-container-divider">
+                    <section id="sound-preference">
+
+                        <span class="in-form-words">Music </span> 
+                        <label for="sound-music" class="switch">
+                          <input id="sound-music" type="checkbox" checked="checked" name="sound" onclick="soundOnOff()" />
+                          <span class="slider"></span>
+                        </label>
+                        <br /> <br />
+
+                        <span class="in-form-words">Sound Effects </span> 
+                        <label for="sound-effect" class="switch">
+                          <input id="sound-effect" type="checkbox" checked="checked" name="sound" onclick="soundEffectsOnOff()" />
+                          <span class="slider"></span>
+                        </label>
+                        <br /> <br />
+
+                    </section>
+                </div>
+            </div>
+
+                    <audio id="led" controls loop> <!-- autoplay -->
+                        <source src="binary-files/LedZeppelin.mp3" type="audio/mpeg" />
+                        Your browser does not support audio tag.
+                    </audio> 
+                    <br /> <br />
+
+                <br /><br />
+<!--            </div>  -->
+
+
+            <script>
+                function soundOnOff(){
+                    let sound = document.getElementById("sound-music");
+                    let music = document.getElementById("led")
+
+                    if (sound.checked == false) {
+                        music.muted = true;
+                        music.autoplay = false;
+                    }else{
+                        music.muted = false;
+                        music.autoplay = true;
+                    }
+                }
+            </script>
+<!--,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+        </div>
+
+
+
+<!-- 4   //////////////////////////////////  -->
+
+        <div class="tab" id="id03">Birthday:
+            <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+            <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+            <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+        </div>
+<!-- -->      
+
+      
+      
+
+<!-- butts   ////////////////////////////////// -->    
+        <div id="butt-container">  
+    	
+            <div>
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="w3-button w3-black">&#10094;</button>
+	        </div>
+
+            <div>
+                <button type="button" id="startButton" onclick="start()">Start</button>
+            </div>
+
+            <div class="float-right">
+                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="w3-button w3-black">&#10095;</button>
+	        </div>
+
+        </div>
+  
+<!-- Circles which indicates the steps of the form: -->
+        <div id="steps">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+    </form>    
+<!--    </form>   -->
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+document.getElementById("setting-background").style.display = "none";
+document.getElementById("setting-sound").style.display = "none";
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+
+//alert("showTab(), currentTab is: " + n);
+
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  var xid = x[n].id;
+
+
+//alert("n is:" +n+ "x[n] was : " + x[n].style.display + "\n and x[n].id : " + xid);
+  x[n].style.display = "block";
+//  alert("x[n] is : "+ x[n].style.display );
+
+
+
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.visibility = "hidden";
+//////document.getElementById("setting-background").style.display = "none";
+
+  } else {
+document.getElementById("prevBtn").style.visibility = "visible";
+  }
+
+
+  if (n == (x.length - 1)) {
+///    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("nextBtn").style.visibility = "hidden";
+  } else {
+///    document.getElementById("nextBtn").style.display = "inline";
+    document.getElementById("nextBtn").style.visibility = "visible";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function start() {
+alert("Start! I am an alert box!");
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+ ///   document.getElementById("regForm").submit();
+ alert("shhh over flooooow");
+    return false;
+
+  }
+  // Otherwise, display the correct tab:
+//alert("in nextPrev(n), currentTab is: " + currentTab);
+  showTab(currentTab);
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+
+</body>
+</html>
+
