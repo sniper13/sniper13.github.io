@@ -65,8 +65,8 @@ input.invalid {
 
 
 input:focus {
-  background-color: red;
- xxx border: 1px solid blue;
+  background-color: #eff4ff;
+ xxxborder: 1px solid blue;
 }
 
 
@@ -167,10 +167,8 @@ button:hover {
 }
 
 .setting-container-divider {
-    border: 1px dashed blue;
-    width: 50%;
-    width: calc(50% + 20px);
-
+  width: 50%;
+  width: calc(50% + 20px);
   display: flex;
   flex-wrap: nowrap;
 }
@@ -193,12 +191,7 @@ button:hover {
 }
 
 /*
-#sound-preference input {
-  width: 10px;
-}
-
 #sound-music {}
-
 #sound-effect {}
 */
 
@@ -208,14 +201,15 @@ button:hover {
 }
 
 #sound-preference {
-  xxxpadding: 10px;
-border: 1px dotted red;
+  padding-right: 15px;
+  padding-top: 15px;
+  width:100%;
 }
 
 #sound-preference label {
   float: right;
-top: 2px;
-margin-left: 12px;
+  top: 2px;
+  margin-left: 12px;
 }
 
 
@@ -259,7 +253,6 @@ margin-left: 12px;
     align-items: flex-end;
     justify-content: center;
     flex-wrap: wrap;
-xxxborder: 1px dashed blue;
 }
 
 
@@ -268,7 +261,6 @@ xxxborder: 1px dashed blue;
     align-items: flex-end;
     justify-content: center;
     flex-wrap: wrap;
-    xxxxborder: 1px dashed blue;
 margin-bottom: 15px;
     xxx?;
 }
@@ -390,6 +382,8 @@ input:checked + .slider:before {
     height: 80px;
 }
 
+/* *********** */
+
 @media screen and (max-width:600px){
     #settings {
         width: 80%;
@@ -413,8 +407,18 @@ input:checked + .slider:before {
     }
 }
 
+/* *********** */
 
+@media screen and (max-width:530px){
+    #sound-preference {
+      padding-right: 0px;
+    }
+    .setting-container-divider {
+      width: 70%;
+    }
+}
 
+/* *********** */
 
 
 .w3-button:hover{color:#000!important;background-color:#ccc!important}

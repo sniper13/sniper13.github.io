@@ -63,7 +63,7 @@
                         <div class="skulls">
                             <a href="#4"><img onclick="buildWallpaper(4)" src="skulls/skull4.png" alt="s4"></a>
                             <a href="#5"><img onclick="buildWallpaper(5)" src="skulls/skull5.png" alt="s5"></a>
-                            <a href="#6"><img onclick="buildWallpaper('6')" src="skulls/skull6.png" alt="s6"></a>
+                            <a href="#6"><img onclick="buildWallpaper(6)" src="skulls/skull6.png" alt="s6"></a>
                         </div>
                     </div>
 
@@ -114,32 +114,36 @@
                 </div>
             </div>
 
-                    <audio id="led" controls loop> <!-- autoplay -->
-                        <source src="binary-files/LedZeppelin.mp3" type="audio/mpeg" />
-                        Your browser does not support audio tag.
-                    </audio> 
-                    <br /> <br />
+            <audio id="led" controls loop volume="0.4"> <!-- autoplay -->
+                <source src="binary-files/LedZeppelin.mp3" type="audio/mpeg" />
+                Your browser does not support audio tag.
+            </audio> 
+            <br /> <br />
 
-                <br /><br />
-<!--            </div>  -->
-
-
-            <script>
-                function soundOnOff(){
-                    let sound = document.getElementById("sound-music");
-                    let music = document.getElementById("led")
-
-                    if (sound.checked == false) {
-                        music.muted = true;
-                        music.autoplay = false;
-                    }else{
-                        music.muted = false;
-                        music.autoplay = true;
-                    }
-                }
-            </script>
-<!--,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
         </div>
+
+        <script>
+            function setInitialVolume() { 
+                let mus = document.getElementById("led");
+                mus.volume = 0.3;
+            }
+            setInitialVolume();
+
+            function soundOnOff(){
+                let sound = document.getElementById("sound-music");
+                let music = document.getElementById("led")
+
+                if (sound.checked == false) {
+                    music.muted = true;
+                    music.autoplay = false;
+                }else{
+                    music.muted = false;
+                    music.autoplay = true;
+                }
+            }
+        </script>
+<!--,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+
 
 
 
@@ -250,9 +254,14 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     // ... the form gets submitted:
  ///   document.getElementById("regForm").submit();
- alert("shhh over flooooow");
-    return false;
-
+ ////alert("shhh over flooow!");
+  currentTab = x.length - 1;
+  }
+  if (currentTab <= -1) {
+    // ... the form gets submitted:
+ ///   document.getElementById("regForm").submit();
+//// alert("shhh too small!");
+  currentTab = 0;
   }
   // Otherwise, display the correct tab:
 //alert("in nextPrev(n), currentTab is: " + currentTab);
