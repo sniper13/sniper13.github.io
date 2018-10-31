@@ -1,7 +1,7 @@
 
 
 body {
-  background-image: url("skulls/skull4.png");
+  background-image: url('skulls/skull4.png');
   background-size: 40px;
   background-repeat: space;    
 }
