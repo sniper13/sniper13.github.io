@@ -1,38 +1,6 @@
-html, 
-body {
-  height: 100%;
-  width: 100%;
-}
-
-@font-face {
-  font-family: acme;
-  src: url("Acme/Acme-Regular.ttf");
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-image: url("../skulls/skull4.png");
-  background-size: 40px;
-  background-repeat: space;    
-  background-color: #F3F3E6;
-  min-width: 100%;
-  min-height: 100%;
-  color: black;
-  font-family: Palatino, Times, Courier, Sans-serif;
-  font-family: acme;
-}
-
-.float-right {
-  float: right;
-}
 
 
-
-
-/* SETTINGS: */
+/* regFORM: ********************************/
 
 #regForm {
   background-color: #ffffff;
@@ -53,8 +21,6 @@ body {
   font-size: 17px;
   border: 1px solid #aaaaaa;
 }
-
-
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
@@ -77,7 +43,6 @@ button {
   padding: 8.5px 20px;
   font-size: 17px;
   font-family: Palatino, serif;
-  xxxfont-family: Palatino, Times, Courier, Sans-serif;
   cursor: pointer;
 }
 
@@ -97,30 +62,18 @@ button:hover {
   cursor:pointer;
 }
 
-
 #butt-container {
   display: flex;
   justify-content: space-between;
 }
 
-
-#butt-container div {
-  xxxxxxxxdisplay:inline-block;
-xxxborder: 1px dashed red;
-xxxcolor: #0b1320; /* super dark blue */
-}
-
-/* ///////////////////////////////////////////////////// */
-
-
-
-
+/* STEPS */
 /* Make circles that indicate the steps of the form: */
 .step {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbbbbb;
+  background-color: #aaa;
   border: none;  
   border-radius: 50%;
   display: inline-block;
@@ -136,46 +89,22 @@ xxxcolor: #0b1320; /* super dark blue */
   background-color: #4CAF50; /* green !!! */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-#regForm {
-
-
-
-}
-
-
-#settings-header{
-    width: 100%;
-    text-align: center;
+#steps {
+  text-align:center;
+  margin-top:40px;
 }
 
 
 
-/*
-.settings-fieldset {
-  border-radius: 20px;
-    margin-left: 0%;
-    padding: 2% 0% 2% 0%;
-    margin-right: 10%;
-}
-*/
 
+
+
+/* SETTINGS: ********************************/
 
 .setting-container {
-    padding-left: 3%;
-    border: 1px solid #aaaaaa; 
-    margin: 17px 0px 17px 0px;
+  padding-left: 3%;
+  border: 1px solid #aaaaaa; 
+  margin: 17px 0px 17px 0px;
 }
 
 .setting-container-divider {
@@ -186,40 +115,50 @@ xxxcolor: #0b1320; /* super dark blue */
 }
 
 .setting-container input {
-    width: 100%;
+  width: 100%;
 }
-
 
 .in-form-words {
-    font-style: italic;
-    font-weight: bold;
-    color: black;
-    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
-    white-space:nowrap;
-    padding-top: 10px;
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+  font-family: Times New Roman, acme, sans-serif;
+  white-space: nowrap;
+  padding-top: 10px;
 }
 
+/* BACKGROUND ********************************/
 
 #color-picker-input {
-    margin: 8px;
+  margin: 8px;
 }
 
 #color-picker-button{	
-    height: 23px;
-    position: relative;
-    top: 8px;
-    line-height: 7px;
+  height: 23px;
+  position: relative;
+  top: 8px;
+  line-height: 7px;
 }
 
-/*
-#sound-music {}
-#sound-effect {}
-*/
-
-
-#led {
-    width: 100%;
+.skulls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.skulls img {
+  width: 50px;
+  margin: 1px 10px 1px 10px;
+}
+
+#skulls-wrapper {
+  margin-bottom: 15px;
+}
+
+
+/* SOUND ********************************/
 
 #sound-preference {
   padding-right: 15px;
@@ -233,65 +172,7 @@ xxxcolor: #0b1320; /* super dark blue */
   margin-left: 12px;
 }
 
-
-
-
-#steps {
-    text-align:center;
-    margin-top:40px;
-}
-
-.fullscreen-butt {
-    float: right;
-    background-color: red;
-    padding: 9px 9px;
-}
-
-.fullscreen-butt img {
-    top: 12px;
-    right: 11px;
-}
-
-#fullscreen-extend {
-    display: block;
-}
-
-#fullscreen-quit {
-  display: none;
-}
-
-.skulls {
-    width: 100%;
-}
-
-.skulls img {
-    width: 50px;
-    margin: 1px 10px 1px 10px;
-}
-
-#skulls-wrapper div {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-
-#skulls-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-wrap: wrap;
-margin-bottom: 15px;
-    xxx?;
-}
-
-
-
-
-
-
-/* Switch KEY - start */
+/* Switch Button for Music ON/OFF - start */
 .switch {
   position: relative;
   width: 30px;
@@ -342,6 +223,58 @@ input:checked + .slider:before {
   transform: translateX(13px);
 }
 /* Switch KEY - end */
+
+#led {
+  width: 100%;
+}
+
+/*
+#sound-music {}
+#sound-effect {}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fullscreen-butt {
+    float: right;
+    background-color: red;
+    padding: 9px 9px;
+}
+
+.fullscreen-butt img {
+    top: 12px;
+    right: 11px;
+}
+
+#fullscreen-extend {
+    display: block;
+}
+
+#fullscreen-quit {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

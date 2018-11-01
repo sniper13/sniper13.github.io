@@ -137,9 +137,12 @@
                 if (sound.checked == false) {
                     music.muted = true;
                     music.autoplay = false;
+                    music.pause();
+                    music.currentTime = 0;
                 }else{
                     music.muted = false;
                     music.autoplay = true;
+                    music.play();
                 }
             }
         </script>
