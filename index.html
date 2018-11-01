@@ -2,26 +2,28 @@
 <html lang="en-US">
 <head>
     <title>Sniper</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="description" content="Sniper game ,Shoot to Kill!">
     <meta name="keywords" content="Sniper, Game, Simple Game, Skull">
     <meta name="author" content="Milad Kh">
-
     <link rel="icon" href="images/sniper-icon.png" type="image/gif" sizes="16x16">
-<!-- lag    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/settings.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body id="body">
 
+    <button onclick="showSettingForm()">Setting</button>
+
+
+
+
     <!-- <form id="regForm" action="/action_page.php"> -->
 <!--    <form>   --> 
    <form id="regForm">
-        <h1>Settings</h1>
+        <h1 class="title">Settings</h1>
         <!-- One "tab" for each step in the form: -->
 
         
@@ -44,7 +46,7 @@
         <br />
 <!--            <h2 id="settings-header">Background</h2>  -->
             
-            <div id="set-background">
+            <div> <!--  id="set-background" -->
                     <div class="setting-container">
                         <div class="setting-container-divider"> <!-- this div reaches up to half the width of the screen. (for design) -->
                             <span class="in-form-words">Select Color: &nbsp; </span>
@@ -98,7 +100,7 @@
 
                         <span class="in-form-words">Music </span> 
                         <label for="sound-music" class="switch">
-                          <input id="sound-music" type="checkbox" checked="checked" name="sound" onclick="soundOnOff()" />
+                          <input id="sound-music" type="checkbox" name="sound" onclick="soundOnOff()" />
                           <span class="slider"></span>
                         </label>
                         <br /> <br />
@@ -114,7 +116,7 @@
                 </div>
             </div>
 
-            <audio id="led" controls loop volume="0.4"> <!-- autoplay -->
+            <audio id="led" controls loop> <!-- autoplay -->
                 <source src="binary-files/LedZeppelin.mp3" type="audio/mpeg" />
                 Your browser does not support audio tag.
             </audio> 
@@ -123,15 +125,14 @@
         </div>
 
         <script>
+            const music = document.getElementById("led");
             function setInitialVolume() { 
-                let mus = document.getElementById("led");
-                mus.volume = 0.3;
+                music.volume = 0.3;
             }
             setInitialVolume();
 
             function soundOnOff(){
-                let sound = document.getElementById("sound-music");
-                let music = document.getElementById("led")
+                const sound = document.getElementById("sound-music");
 
                 if (sound.checked == false) {
                     music.muted = true;
@@ -163,7 +164,7 @@
         <div id="butt-container">  
     	
             <div>
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="w3-button w3-black">&#10094;</button>
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="next-buttons">&#10094;</button>
 	        </div>
 
             <div>
@@ -171,7 +172,7 @@
             </div>
 
             <div class="float-right">
-                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="w3-button w3-black">&#10095;</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="next-buttons">&#10095;</button>
 	        </div>
 
         </div>
@@ -192,11 +193,29 @@
 
 
 
+    <script>
+        const regForm = document.getElementById("regForm");
+        regForm.style.display = 'none';
+        regForm.style.display = 'none';
+//        alert("ok");
+
+        function showSettingForm() {
+//            regForm.style.display = 'block';
+
+
+        if (regForm.style.display === "none") {
+            regForm.style.display = "block";
+        } else {
+            regForm.style.display = "none";
+        }
+
+        }
+
+    </script>
 
 
 
-
-<script type="text/javascript">
+<script>
 document.getElementById("setting-background").style.display = "none";
 document.getElementById("setting-sound").style.display = "none";
 var currentTab = 0; // Current tab is set to be the first tab (0)

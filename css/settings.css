@@ -1,74 +1,69 @@
+html, 
+body {
+  height: 100%;
+  width: 100%;
+}
 
+@font-face {
+  font-family: acme;
+  src: url("Acme/Acme-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-image: url("../skulls/skull4.png");
   background-size: 40px;
   background-repeat: space;    
   background-color: #F3F3E6;
-}
-
-* {
-  box-sizing: border-box;
+  min-width: 100%;
+  min-height: 100%;
+  color: black;
   font-family: Palatino, Times, Courier, Sans-serif;
+  font-family: acme;
 }
 
 .float-right {
-    float: right;
-}
-
-.in-form-words {
-    font-style: italic;
-    font-weight: bold;
-    color: black;
-    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
-    white-space:nowrap;
-    padding-top: 10px;
+  float: right;
 }
 
 
 
-.row { 
-  display:inline-block;
-    justify-content: center;
-}
 
-
+/* SETTINGS: */
 
 #regForm {
   background-color: #ffffff;
-  margin: 100px auto;
-  font-family: Raleway;
+  margin: 90px auto;
+  font-family: acme;
   padding: 40px;
   width: 70%;
   min-width: 300px;
 }
 
-h1 {
-  text-align: center;  
+.title {
+  text-align: center;
 }
 
 #regForm input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
-  font-family: Raleway;
   border: 1px solid #aaaaaa;
-xxxbackground-color: powderblue;
 }
 
 
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: #ffdddd;
+  background-color: #ffdddd; /* light pink */
 }
-
 
 input:focus {
-  background-color: #eff4ff;
- xxxborder: 1px solid blue;
+  background-color: #eff4ff; /* super light blue */
 }
-
 
 /* Hide all steps by default: */
 .tab {
@@ -76,23 +71,49 @@ input:focus {
 }
 
 button {
-  xxxbackground-color: #4CAF50;
-  background-color: #3760a3;
+  background-color: #3760a3; /* dark blue */
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 8.5px 20px;
   font-size: 17px;
-  font-family: Raleway;
+  font-family: Palatino, serif;
+  xxxfont-family: Palatino, Times, Courier, Sans-serif;
   cursor: pointer;
 }
 
 button:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-#prevBtn {
-  background-color: #bbbbbb;
+.next-buttons {
+  color: #ffffff;
+  background-color: #000000;
+  border:none;
+  padding:8px 16px; /* while the button padding is 8.5px 20px; for design */
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
 }
+
+
+#butt-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#butt-container div {
+  xxxxxxxxdisplay:inline-block;
+xxxborder: 1px dashed red;
+xxxcolor: #0b1320; /* super dark blue */
+}
+
+/* ///////////////////////////////////////////////////// */
+
+
+
 
 /* Make circles that indicate the steps of the form: */
 .step {
@@ -112,7 +133,7 @@ button:hover {
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* green !!! */
 }
 
 
@@ -127,19 +148,10 @@ button:hover {
 
 
 
-#settings {
-    color: black;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+#regForm {
 
-    wrap-direction: column;
-    justify-content: center;
-    
-    background-color: #FFFFFF;
-    border-radius: 7px; 
-    xxxbackground-color: #3e5d8e;    
-    xxxborder: 1px dashed green;
+
+
 }
 
 
@@ -162,7 +174,7 @@ button:hover {
 
 .setting-container {
     padding-left: 3%;
-    border: 1px solid #bcbcbc; 
+    border: 1px solid #aaaaaa; 
     margin: 17px 0px 17px 0px;
 }
 
@@ -177,6 +189,15 @@ button:hover {
     width: 100%;
 }
 
+
+.in-form-words {
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
+    white-space:nowrap;
+    padding-top: 10px;
+}
 
 
 #color-picker-input {
@@ -271,10 +292,8 @@ margin-bottom: 15px;
 
 
 /* Switch KEY - start */
-
 .switch {
   position: relative;
-  display: inline-block;
   width: 30px;
   height: 17px;
 }
@@ -310,11 +329,11 @@ margin-bottom: 15px;
 }
 
 input:checked + .slider {
-  background-color: #3760a3;
+  background-color: #3760a3; /* Blue */
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #3760a3;
+  box-shadow: 0 0 1px #3760a3; /* Blue */
 }
 
 input:checked + .slider:before {
@@ -329,6 +348,21 @@ input:checked + .slider:before {
 
 
 
+
+
+
+
+
+
+/*
+.row {  /* ? ? ? xxx 
+  display:inline-block;
+    justify-content: center;
+}
+*/
+
+
+/*
 .next-butt {
     align-items: flex-end;
     justify-content: center;
@@ -340,8 +374,9 @@ input:checked + .slider:before {
     width: 100%;
 
 }
+*/
 
-
+/*
 .flex-container {
   display: flex;
   align-items: stretch;
@@ -382,6 +417,8 @@ input:checked + .slider:before {
     height: 80px;
 }
 
+*/
+
 /* *********** */
 
 @media screen and (max-width:600px){
@@ -419,25 +456,4 @@ input:checked + .slider:before {
 }
 
 /* *********** */
-
-
-.w3-button:hover{color:#000!important;background-color:#ccc!important}
-
-.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
-
-.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-
-.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
-
-#butt-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-#butt-container div {
-  display:inline-block;
-}
-
-/* ///////////////////////////////////////////////////// */
 
