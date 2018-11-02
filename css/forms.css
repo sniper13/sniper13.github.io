@@ -1,5 +1,4 @@
 
-
 /* regFORM: ********************************/
 
 #regForm {
@@ -11,7 +10,7 @@
   min-width: 300px;
 }
 
-.title {
+#formTitle {
   text-align: center;
 }
 
@@ -31,7 +30,7 @@ input:focus {
   background-color: #eff4ff; /* super light blue */
 }
 
-/* Hide all steps by default: */
+/* Hide all Tabs by default: */
 .tab {
   display: none;
 }
@@ -93,10 +92,6 @@ button:hover {
   text-align:center;
   margin-top:40px;
 }
-
-
-
-
 
 
 /* SETTINGS: ********************************/
@@ -228,165 +223,41 @@ input:checked + .slider:before {
   width: 100%;
 }
 
-/*
-#sound-music {}
-#sound-effect {}
-*/
 
+/* MEDIA QUERY ********************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.fullscreen-butt {
-    float: right;
-    background-color: red;
-    padding: 9px 9px;
+/* ***** settings ***** *//*    ******    *****/
+@media screen and (max-width:600px) {
+  #settings {
+    width: 80%;
+    margin: 0% 10% 0% 10%;
+  }
 }
 
-.fullscreen-butt img {
-    top: 12px;
-    right: 11px;
+@media screen and (max-width:460px) {
+  #settings {
+    width: 84%;
+    margin: 0% 8% 0% 8%;
+  }
 }
 
-#fullscreen-extend {
-    display: block;
+@media screen and (max-width:400px) {
+  #settings {
+    position: relative;
+    top: -22px;
+    width: 88%;
+    margin: 0% 6% 0% 6%;
+  }
 }
 
-#fullscreen-quit {
-  display: none;
+/* ***** sound-preference ***** *//*    *****/
+@media screen and (max-width:530px) {
+  #sound-preference {
+    padding-right: 0px;
+  }
+  .setting-container-divider {
+    width: 70%;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.row {  /* ? ? ? xxx 
-  display:inline-block;
-    justify-content: center;
-}
-*/
-
-
-/*
-.next-butt {
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-}
-
-#next-butt-wrapper {
-    width: 100%;
-
-}
-*/
-
-/*
-.flex-container {
-  display: flex;
-  align-items: stretch;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  position: fixed;
-  width: 100%;
-  margin: 0px;
-  bottom:0%;
-  left: 0%;
-  opacity: 1;
-}
-
-.flex-container > div {
-  background-color: black;
-  color: white;
-  width: 90px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 50px;
-  border-radius: 50px;
-}
-
-
-.flex-container > div > span {
-  vertical-align: middle;
-  position: relative;
-  bottom: 10px;
-}
-
-.highlighted {
-    background-color: rgba(255, 0, 0, 0.5); //semi-transparent red
-}
-
-
-#controller{
-    height: 80px;
-}
-
-*/
-
-/* *********** */
-
-@media screen and (max-width:600px){
-    #settings {
-        width: 80%;
-        margin: 0% 10% 0% 10%;
-    }
-}
-
-@media screen and (max-width:460px){
-    #settings {
-        width: 84%;
-        margin: 0% 8% 0% 8%;
-    }
-}
-
-@media screen and (max-width:400px){
-    #settings {
-        position: relative;
-        top: -22px;
-        width: 88%;
-        margin: 0% 6% 0% 6%;
-    }
-}
-
-/* *********** */
-
-@media screen and (max-width:530px){
-    #sound-preference {
-      padding-right: 0px;
-    }
-    .setting-container-divider {
-      width: 70%;
-    }
-}
-
-/* *********** */
 
