@@ -26,7 +26,7 @@
     <span id ="sidenavIcon" onclick="openNav()">&#9776; </span>
 
     <button onclick="showForm()">Form</button>
-
+<div id="modalContainer" class="modal">
 <!--    <form>  **************************************** --> 
    <form id="regForm" class="animate">
 
@@ -181,22 +181,12 @@
 
     </form>    
 <!--    </form>   -->
-
+</div>
 
 
 
 
 <script>
-
-// When the user clicks anywhere outside of the modal, close it
-// NOT WORKING!
-var modal = document.getElementById('formWrapper');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 
 const regForm = document.getElementById("regForm");
 regForm.style.display = 'none';
@@ -206,6 +196,22 @@ let theTab = "tab";
 let currentTab = 0; // Initial Current t-a-b is set to be the first (0)
 //showTab(currentTab); // Display the current tab
 
+
+// When the user clicks anywhere outside of the modal, close it
+// NOT WORKING!
+var modal = document.getElementById('modalContainer');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    regForm.style.display === "none"
+    tabKind()[currentTab].style.display = "none";
+
+    for (tab = 0; tab<5; tab++) {
+      tabKind()[tab].style.display = "none";
+    }
+
+  }
+}
 
 function sidenavTask(task) {
   theTab = task;
@@ -238,9 +244,11 @@ function closeNav() {
 
 function showForm() {
   if (regForm.style.display === "none") {
-      regForm.style.display = "block";
-  } else {
-      regForm.style.display = "none";
+    regForm.style.display = "block";
+    var modal = document.getElementById('modalContainer');
+    modal.style.display = "block";
+  }else {
+    regForm.style.display = "none";
   }
 //showTab(0);
     showTab(currentTab);
