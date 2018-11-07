@@ -31,11 +31,50 @@ body {
 
 /* SIDENAV: " ********************************/
 
+.topnav {
+  xxxmargin:0;
+  overflow: hidden;
+  background-color: #f1f1f1;
+position: fixed;
+top: 0px;
+left:0px;
+width: 100%;
+
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid red;
+}
+
+/* SIDENAV: " ********************************/
+
 #sidenavIcon {
+float: left;
+
+text-align: center;
   font-family: sans-serif;
   font-size: 30px;
+xxxfont-weight: bold;
   cursor: pointer;
-  background-color: #F3F3E6
+  zzzbackground-color: #F3F3E6;
+mmmpadding: 0px, 10px, 0px, 10px;
+padding: 4px 15px;
+
 }
 
 .sidenav {

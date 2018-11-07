@@ -15,6 +15,13 @@
 
 <body id="body">
 
+    <nav class="topnav">
+<span id ="sidenavIcon" onclick="openNav()">&#9776; </span>
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <aside id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="#" onclick="sidenavTask('about')">About</a>
@@ -23,11 +30,9 @@
       <a href="#" onclick="sidenavTask('contact')">Contact</a>
     </aside>
 
-    <span id ="sidenavIcon" onclick="openNav()">&#9776; </span>
-
     <button onclick="showForm()">Form</button>
 <div id="modalContainer" class="modal">
-<!--    <form>  **************************************** --> 
+<!--    <form>  **************************************** -->
    <form id="regForm" class="animate">
 
         <h1 id="formTitle">Settings</h1>
@@ -101,7 +106,7 @@
             <br />
             <div class="setting-container">
                 <div class="setting-container-divider">
-                    <section id="sound-preference">
+                    <div id="sound-preference">
 
                         <span class="in-form-words">Music </span> 
                         <label for="sound-music" class="switch">
@@ -117,7 +122,7 @@
                         </label>
                         <br /> <br />
 
-                    </section>
+                    </div>
                 </div>
             </div>
 
@@ -196,24 +201,34 @@ let theTab = "tab";
 let currentTab = 0; // Initial Current t-a-b is set to be the first (0)
 //showTab(currentTab); // Display the current tab
 
+console.log("in the begginig..." + "\n  " + "the tab: " + theTab + "\n  " + "regForm.style.display: " + regForm.style.display);
+
 
 // When the user clicks anywhere outside of the modal, close it
 // NOT WORKING!
 var modal = document.getElementById('modalContainer');
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    regForm.style.display === "none"
-    tabKind()[currentTab].style.display = "none";
 
-    for (tab = 0; tab<5; tab++) {
-      tabKind()[tab].style.display = "none";
+  if (event.target == modal) {
+    if (modal.style.display == "block") {
+      modal.style.display = "none";
+      regForm.style.display = "none";
+      tabKind()[currentTab].style.display = "none";
+
+ //     for (tab = 0; tab < tabKind().length; tab++) {
+   //     tabKind()[tab].style.display = "none";
+     // }
     }
+    currentTab = 0;
 
   }
+
+console.log("after clicking modal container..." + "\n  " + "the tab: " + theTab + "\n  " + "regForm.style.display: " + regForm.style.display);
+
 }
 
 function sidenavTask(task) {
+  closeNav();
   theTab = task;
   let title = document.getElementById("formTitle");
 
@@ -230,8 +245,6 @@ function sidenavTask(task) {
     title.innerHTML = "Account";
     showForm();
   }
-
-  closeNav();
 }
 
 function openNav() {
@@ -243,10 +256,25 @@ function closeNav() {
 }
 
 function showForm() {
-  if (regForm.style.display === "none") {
+  if (regForm.style.display == "none") {
     regForm.style.display = "block";
+
     var modal = document.getElementById('modalContainer');
-    modal.style.display = "block";
+///    if (modal.style.display == "none") {
+      modal.style.display = "block";
+///    }
+
+    let step = document.getElementsByClassName("step");
+    for (i = 0; i < tabKind().length; i++) {
+      if (step[i].style.display == "none") {
+        step[i].style.display = "block";
+      }
+    }
+    for (i = tabKind().length; i < 5; i++) {
+      step[i].style.display = "none";
+    }
+
+
   }else {
     regForm.style.display = "none";
   }
@@ -274,8 +302,9 @@ function showTab(n) {
   let x = tabKind();
   let xid = x[n].id;
 
-  x[n].style.display = "block";
-
+///  if (x[n].style.display == "none") {
+    x[n].style.display = "block";
+///  }
   //... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.visibility = "hidden";

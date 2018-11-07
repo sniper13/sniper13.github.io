@@ -1,5 +1,6 @@
 
 /* The Modal (background) */
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -122,7 +123,7 @@ button:hover {
 
 .setting-container {
   padding-left: 3%;
-  border: 1px solid #aaaaaa; 
+  border: 1px solid #aaaaaa;
   margin: 17px 0px 17px 0px;
 }
 
@@ -152,7 +153,7 @@ button:hover {
   margin: 8px;
 }
 
-#color-picker-button{	
+#color-picker-button {
   height: 23px;
   position: relative;
   top: 8px;
@@ -176,7 +177,6 @@ button:hover {
   margin-bottom: 15px;
 }
 
-
 /* SOUND ********************************/
 
 #sound-preference {
@@ -198,7 +198,7 @@ button:hover {
   height: 17px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
