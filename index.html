@@ -16,24 +16,25 @@
 <body id="body">
 
     <nav class="topnav">
-<span id ="sidenavIcon" onclick="openNav()">&#9776; </span>
-      <a href="#home" class="active">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
+        <span id ="sidenavIcon" onclick="openNav()">&#9776; </span>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#fillforms" onclick="showAllFormTabs()">Fill Forms</a>
     </nav>
 
     <aside id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#" onclick="sidenavTask('about')">About</a>
-      <a href="#" onclick="sidenavTask('setting')">Settings</a>
-      <a href="#" onclick="sidenavTask('account')">Account</a>
-      <a href="#" onclick="sidenavTask('contact')">Contact</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" onclick="sidenavTask('about')">About</a>
+        <a href="#" onclick="sidenavTask('setting')">Settings</a>
+        <a href="#" onclick="sidenavTask('account')">Account</a>
+        <a href="#" onclick="sidenavTask('contact')">Contact</a>
     </aside>
 
-    <button onclick="showForm()">Form</button>
+    <br/><br><br><br><br><br><br><button onclick="showAllFormTabs()">Form</button>
 <div id="modalContainer" class="modal">
 <!--    <form>  **************************************** -->
-   <form id="regForm" class="animate">
+    <form id="regForm" class="animate">
 
         <h1 id="formTitle">Settings</h1>
         
@@ -84,18 +85,16 @@
 
             <script>
                 function changeColor() {
-                    let color = document.getElementById("color-picker-input").value;
-                    let body = document.getElementById("body");
-                    body.style.backgroundColor = color;
-                   // return false;
+                  let color = document.getElementById("color-picker-input").value;
+                  let body = document.getElementById("body");
+                  body.style.backgroundColor = color;
+                 // return false;
                 }
 
                 function buildWallpaper(x) {
-                    let body = document.getElementsByTagName("body")[0];
-
-                    let wallpaperUrl = 'url('  +"'" + 'skulls/skull' + x + '.png' + "'"+ ')';
-
-                    body.style.backgroundImage = wallpaperUrl;
+                  let body = document.getElementsByTagName("body")[0];
+                  let wallpaperUrl = 'url('  +"'" + 'skulls/skull' + x + '.png' + "'"+ ')';
+                  body.style.backgroundImage = wallpaperUrl;
                 }
             </script>
 
@@ -192,10 +191,10 @@
 
 
 <script>
-
+"use strict";
 const regForm = document.getElementById("regForm");
 regForm.style.display = 'none';
-//document.getElementById("setting-background").style.display = "none";
+//document.getElementById("setting-background").style.display = "none";//adfghkk
 //document.getElementById("setting-sound").style.display = "none";
 let theTab = "tab";
 let currentTab = 0; // Initial Current t-a-b is set to be the first (0)
@@ -204,8 +203,7 @@ let currentTab = 0; // Initial Current t-a-b is set to be the first (0)
 console.log("in the begginig..." + "\n  " + "the tab: " + theTab + "\n  " + "regForm.style.display: " + regForm.style.display);
 
 
-// When the user clicks anywhere outside of the modal, close it
-// NOT WORKING!
+// When the user clicks anywhere outside of the modal, close it!
 var modal = document.getElementById('modalContainer');
 window.onclick = function(event) {
 
@@ -215,15 +213,14 @@ window.onclick = function(event) {
       regForm.style.display = "none";
       tabKind()[currentTab].style.display = "none";
 
- //     for (tab = 0; tab < tabKind().length; tab++) {
-   //     tabKind()[tab].style.display = "none";
-     // }
+      // for (tab = 0; tab < tabKind().length; tab++) {
+      //   tabKind()[tab].style.display = "none";
+      //}
     }
     currentTab = 0;
-
   }
 
-console.log("after clicking modal container..." + "\n  " + "the tab: " + theTab + "\n  " + "regForm.style.display: " + regForm.style.display);
+  console.log("after clicking modal container..." + "\n  " + "the tab: " + theTab + "\n  " + "regForm.style.display: " + regForm.style.display);
 
 }
 
@@ -255,6 +252,11 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
+function showAllFormTabs() {
+  theTab = "tab";
+  showForm()
+}
+
 function showForm() {
   if (regForm.style.display == "none") {
     regForm.style.display = "block";
@@ -265,12 +267,12 @@ function showForm() {
 ///    }
 
     let step = document.getElementsByClassName("step");
-    for (i = 0; i < tabKind().length; i++) {
+    for (let i = 0; i < tabKind().length; i++) {
       if (step[i].style.display == "none") {
         step[i].style.display = "block";
       }
     }
-    for (i = tabKind().length; i < 5; i++) {
+    for (let i = tabKind().length; i < 5; i++) {
       step[i].style.display = "none";
     }
 
@@ -278,23 +280,19 @@ function showForm() {
   }else {
     regForm.style.display = "none";
   }
-//showTab(0);
     showTab(currentTab);
 }
 
 function tabKind() {
-//alert("theTab: " +theTab);
   if (theTab == 'setting') {
     return document.getElementsByClassName("setting");
   }
-
   if (theTab == 'account') {
     return document.getElementsByClassName("account");
   }
   else {
     return document.getElementsByClassName("tab");
   }
-
 }
 
 function showTab(n) {

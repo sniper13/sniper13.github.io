@@ -29,7 +29,7 @@ body {
 }
 
 
-/* SIDENAV: " ********************************/
+/* TOPNAV: " ********************************/
 
 .topnav {
   xxxmargin:0;
@@ -54,11 +54,14 @@ width: 100%;
 }
 
 .topnav a:hover {
-  border-bottom: 3px solid red;
+  background-color: #333;
+  color: #fff;
 }
 
 .topnav a.active {
-  border-bottom: 3px solid red;
+  background-color: #333;
+  color: #fff;
+border-right:2px solid red;
 }
 
 /* SIDENAV: " ********************************/

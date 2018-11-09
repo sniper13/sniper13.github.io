@@ -116,6 +116,9 @@ button:hover {
 #steps {
   text-align:center;
   margin-top:40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap
 }
 
 
