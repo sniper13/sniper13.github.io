@@ -1,0 +1,30 @@
+html, 
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: acme;
+  src: url("Acme/Acme-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../skulls/skull1.png");
+  background-size: 40px;
+  background-repeat: space;    
+  background-color: #F3F3E6;
+  min-width: 100%;
+  min-height: 100%;
+  color: black;
+  font-family: acme, Palatino, Times, Courier, Sans-serif;
+}
+
+.right {
+  float: right;
+}
+

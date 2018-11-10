@@ -91,7 +91,7 @@ button:hover {
   justify-content: space-between;
 }
 
-/* STEPS */
+/* STEPS: ********************************/
 /* Make circles that indicate the steps of the form: */
 .step {
   height: 15px;
