@@ -14,14 +14,20 @@ body {
 }
 
 body {
-  background-image: url("../skulls/skull1.png");
-  background-size: 40px;
-  background-repeat: space;    
+  xxxbackground-image: url("../skulls/skull1.png");
+  xxxbackground-size: 40px;
+  xxxbackground-repeat: space;    
   background-color: #F3F3E6;
   min-width: 100%;
   min-height: 100%;
   color: black;
   font-family: acme, Palatino, Times, Courier, Sans-serif;
+
+  /* temporary state: */
+  background-image: url("../images/under.gif");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
 }
 
 .right {
